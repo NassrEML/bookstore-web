@@ -1,6 +1,6 @@
 1;juan;1234;customer;id_art1,id_art2,id_art3
-2;pepe;customer;id_art4,id_art5,id_art6
-3;antonio;customer;id_art7,id_art8,id_art9
-4;nestor;customer;id_art10,id_art11,id_art12
-5;angel;admin;id_art13,id_art14,id_art15
-6;alejandro;admin;id_art16,id_art17,id_art18
+2;pepe;1234;customer;id_art4,id_art5,id_art6
+3;antonio;1234;customer;id_art7,id_art8,id_art9
+4;nestor;1234;customer;id_art10,id_art11,id_art12
+5;angel;1234;admin;id_art13,id_art14,id_art15
+6;alejandro;1234;admin;id_art16,id_art17,id_art18

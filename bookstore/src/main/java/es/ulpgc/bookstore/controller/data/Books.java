@@ -17,31 +17,30 @@ import java.util.logging.Logger;
  *
  * @author nassr
  */
-public final class Users {
+public final class Books {
     
-    private static ArrayList<User> listOfUsers = new ArrayList();
-    private static final Users instance = new Users();
+    private static ArrayList<Book> listOfBooks = new ArrayList();
+    private static final Books instance = new Books();
     
-    private Users() {
+    private Books() {
         try {
-            this.loadUsers();
+            this.loadBooks();
         } catch (IOException ex) {
             Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    public static User isUserExist(String username, String password) {
-        for (User user : listOfUsers) {
-            if (user.isExist(username, password)) {
-                return user;
+    public static Book getBookById(String id) {
+        for (Book book : listOfBooks) {
+            if (book.getId().equals(id)) {
+                return book;
             }
         }
         return null;
     }
-    
 
-    private void loadUsers() throws FileNotFoundException, IOException {
-        String csvFile = "C:\\Users\\nassr\\Desktop\\bookstore-web\\bookstore\\src\\main\\resources\\users.csv";
+    private void loadBooks() throws FileNotFoundException, IOException {
+        String csvFile = "C:\\Users\\nassr\\Desktop\\bookstore-web\\bookstore\\src\\main\\resources\\books.csv";
         String csvSplitBy = ";";
         String line = "";
         BufferedReader br = null;
@@ -51,9 +50,9 @@ public final class Users {
             br = new BufferedReader(new FileReader(csvFile));
             while ((line = br.readLine()) != null) {
 
-                String[] user = line.split(csvSplitBy);
+                String[] book = line.split(csvSplitBy);
 
-                this.listOfUsers.add(new User(user[0],user[1],user[2],user[3],user[4].split(",")));
+                Books.listOfBooks.add(new Book(book[0],book[1],book[2]));
 
             }
 
@@ -68,3 +67,4 @@ public final class Users {
 
     }
 }
+
